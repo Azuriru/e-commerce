@@ -1,0 +1,26 @@
+{
+    "include position": {
+        "scope": "svelte,scss,sass,css",
+        "prefix": "@pos",
+        "body": [
+            "@include position($1);$0",
+        ],
+        "description": "New include rule for position"
+    },
+    "include flex": {
+        "scope": "svelte,scss,sass,css",
+        "prefix": "@flex",
+        "body": [
+            "@include flex$1;$0",
+        ],
+        "description": "New include rule for flex"
+    },
+    "include breakpoint": {
+        "scope": "svelte,scss,sass,css",
+        "prefix": "@break",
+        "body": [
+            "@include breakpoint($1);$0",
+        ],
+        "description": "New include rule for breakpoint"
+    },
+}

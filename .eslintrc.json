@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "azuriru",
+    "azuriru/react"
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off"
+  }
+}

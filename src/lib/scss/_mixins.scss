@@ -1,0 +1,120 @@
+@function v($base, $unit: px, $multiplier: 4) {
+    @return #{$base * $multiplier}#{$unit};
+}
+
+@mixin flex($props...) {
+    @if index($props, hidden) {
+        display: none;
+    } @else {
+        display: flex;
+    }
+
+    @each $prop in $props {
+        @if $prop == center {
+            align-items: center;
+            justify-content: center;
+        } @else if $prop == startY {
+            align-items: flex-start;
+        } @else if $prop == centerY {
+            align-items: center;
+        } @else if $prop == endY {
+            align-items: flex-end;
+        } @else if $prop == startX {
+            justify-content: flex-start;
+        } @else if $prop == centerX {
+            justify-content: center;
+        } @else if $prop == endX {
+            justify-content: flex-end;
+        } @else if $prop == between {
+            justify-content: space-between;
+        } @else if $prop == around {
+            justify-content: space-around;
+        } @else if $prop == evenly {
+            justify-content: space-evenly;
+        } @else if $prop == column {
+            flex-direction: column;
+        } @else if $prop == wrap {
+            flex-wrap: wrap;
+        } @else if $prop == 1 or $prop == one {
+            flex: 1 1 0%;
+        } @else if $prop == auto {
+            flex: 1 1 auto;
+        } @else if $prop == initial {
+            flex: 0 1 auto;
+        } @else if $prop == none {
+            flex: none;
+        } @else if $prop == grow {
+            flex-grow: 1;
+        } @else if $prop == noShrink {
+            flex-shrink: 0;
+        }
+    }
+}
+
+@mixin min($size) {
+    @if map-has-key($breakpoints, $size) {
+        min-width: map-get($breakpoints, $size);
+    }
+}
+
+@mixin max($size) {
+    @if map-has-key($breakpoints, $size) {
+        max-width: map-get($breakpoints, $size);
+    }
+}
+
+@mixin breakpoint($size) {
+    @if map-has-key($breakpoints, $size) {
+        @media (min-width: map-get($breakpoints, $size)) {
+            @content;
+        }
+    }
+}
+
+@mixin maxpoint($size) {
+    @if map-has-key($breakpoints, $size) {
+        @media (max-width: map-get($breakpoints, $size)) {
+            @content;
+        }
+    }
+}
+
+@mixin position($type, $args: null) {
+    position: $type;
+
+    @if $args == stretch {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    } @else {
+        @each $prop, $value in $args {
+            #{$prop}: $value;
+        }
+    }
+}
+
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin mask($size) {
+    mask-size: var(--mask-size, $size);
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+@mixin mask-image($class, $path: null) {
+    $asset-path: '/assets/icons';
+
+    .#{$class} {
+        @if $path {
+            mask-image: url('#{$asset-path}/#{$path}');
+        } @else {
+            mask-image: url('#{$asset-path}/#{$class}.svg');
+        }
+        @content;
+    }
+}

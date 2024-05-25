@@ -1,0 +1,80 @@
+.cart {
+    @include flex(column, grow);
+    background-image: linear-gradient(to right, #0cbadf, #1eddb2);
+}
+
+.cart-header {
+    @include flex(center);
+    font-size: larger;
+    color: white;
+    padding: v(4) v(6);
+}
+
+.cart-checkout-header {
+    @include flex(between);
+    color: white;
+    padding: v(4) v(6);
+}
+
+.cart-groups {
+    @include flex(column);
+    gap: v(6);
+    padding: 0 v(6) v(6);
+    overflow: auto;
+    height: 100%;
+}
+
+.cart-group {
+    @include flex(column);
+    background: white;
+    border-radius: v(4);
+    gap: v(4);
+    padding: v(6);
+}
+
+.cart-group-seller {
+    @include flex(centerY);
+    gap: v(4);
+}
+
+.cart-group-products {
+    @include flex(column);
+    gap: v(4);
+}
+
+.cart-item {
+    @include flex;
+    gap: v(4);
+}
+
+.cart-item-image {
+    @include flex;
+    @include position(relative);
+    width: 150px;
+    height: 150px;
+}
+
+.cart-item-details {
+    @include flex(column, between, grow);
+    padding: v(3);
+}
+
+.cart-item-name {
+    @include ellipsis;
+}
+
+.cart-item-info {
+    @include flex(between, centerY);
+}
+
+.cart-item-controls {
+    @include flex;
+}
+
+.cart-item-controls > * {
+    @include flex(center);
+    width: v(8);
+    height: v(8);
+    padding: v(1);
+    border: 1px solid black;
+}

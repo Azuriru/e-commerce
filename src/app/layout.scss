@@ -1,0 +1,14 @@
+#app {
+    @include flex(column);
+    @include max(sm);
+    height: 100%;
+    margin: auto;
+}
+
+.main {
+    @include flex();
+    height: 100%;
+    overflow: auto;
+    color: #181818;
+    background: white;
+}

@@ -1,0 +1,34 @@
+{
+	"translate": {
+		"scope": "svelte,javascript,typescript",
+		"prefix": "t",
+		"body": [
+			"\\$t{$1}",
+		],
+		"description": "New translation"
+	},
+	"translate block": {
+		"scope": "svelte,javascript,typescript",
+		"prefix": "T",
+		"body": [
+			"{\\$t('$1')}",
+		],
+		"description": "New translation"
+	},
+	"import i18n": {
+		"scope": "svelte,javascript,typescript",
+		"prefix": "i18n",
+		"body": [
+			"import { t } from '\\$lib/i18n';",
+		],
+		"description": "import i18n"
+	},
+	"i18n key": {
+		"scope": "json",
+		"prefix": "key",
+		"body": [
+			"\"$1\": \"$2\"$0",
+		],
+		"description": "import i18n"
+	}
+}

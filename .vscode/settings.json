@@ -1,0 +1,12 @@
+{
+    "eslint.validate": [
+        "svelte"
+    ],
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.workingDirectories": [],
+    "svelte.plugin.svelte.compilerWarnings": {
+        "css-unused-selector": "ignore",
+        "a11y-autofocus": "ignore",
+    }
+}

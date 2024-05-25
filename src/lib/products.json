@@ -1,0 +1,761 @@
+[
+    {
+        "name": "baby-bottle",
+        "description": "Durable and safe baby bottle.",
+        "price": 8.99,
+        "category": [
+            "baby",
+            "feeding"
+        ],
+        "id": 12345678,
+        "seller": 76543210
+    },
+    {
+        "name": "baby-food",
+        "description": "Nutritious food for babies.",
+        "price": 4.49,
+        "category": [
+            "baby",
+            "food"
+        ],
+        "id": 23456789,
+        "seller": 76543210
+    },
+    {
+        "name": "backpack",
+        "description": "Durable backpack with multiple compartments.",
+        "price": 29.99,
+        "category": [
+            "fashion",
+            "accessories"
+        ],
+        "id": 34891267,
+        "seller": 91576243
+    },
+    {
+        "name": "ball-dress",
+        "description": "Gorgeous ball dress for special events.",
+        "price": 99.99,
+        "category": [
+            "fashion",
+            "clothing"
+        ],
+        "id": 48726319,
+        "seller": 91576243
+    },
+    {
+        "name": "blender",
+        "description": "High-speed blender for smoothies and shakes.",
+        "price": 45.99,
+        "category": [
+            "home",
+            "kitchen"
+        ],
+        "id": 36278940,
+        "seller": 94578231
+    },
+    {
+        "name": "brow-fix-gel",
+        "description": "Keep your brows in place with this gel.",
+        "price": 9.99,
+        "category": [
+            "personal care",
+            "beauty"
+        ],
+        "id": 29718465,
+        "seller": 84675931
+    },
+    {
+        "name": "butter",
+        "description": "Creamy and rich butter.",
+        "price": 2.99,
+        "category": [
+            "food",
+            "dairy"
+        ],
+        "id": 34567890,
+        "seller": 69382741
+    },
+    {
+        "name": "cable-organizer",
+        "description": "Keep your cables tidy with this organizer.",
+        "price": 8.99,
+        "category": [
+            "office",
+            "supplies"
+        ],
+        "id": 38749152,
+        "seller": 84659372
+    },
+    {
+        "name": "canned-salmon",
+        "description": "High-quality canned salmon.",
+        "price": 6.99,
+        "category": [
+            "food",
+            "seafood"
+        ],
+        "id": 45678901,
+        "seller": 69382741
+    },
+    {
+        "name": "caramel-coffee",
+        "description": "Delicious caramel-flavored coffee.",
+        "price": 9.99,
+        "category": [
+            "food",
+            "beverage"
+        ],
+        "id": 56789012,
+        "seller": 69382741
+    },
+    {
+        "name": "caramel-sticks",
+        "description": "Sweet caramel sticks for snacking.",
+        "price": 3.49,
+        "category": [
+            "food",
+            "candy"
+        ],
+        "id": 67890123,
+        "seller": 69382741
+    },
+    {
+        "name": "cat-food",
+        "description": "Nutritious food for your cat.",
+        "price": 10.99,
+        "category": [
+            "pet",
+            "food"
+        ],
+        "id": 78901234,
+        "seller": 84659123
+    },
+    {
+        "name": "cat-house",
+        "description": "Cozy house for your beloved cat.",
+        "price": 49.99,
+        "category": [
+            "pet",
+            "furniture"
+        ],
+        "id": 29781453,
+        "seller": 84659123
+    },
+    {
+        "name": "cheese-slices",
+        "description": "Conveniently sliced cheese.",
+        "price": 5.49,
+        "category": [
+            "food",
+            "dairy"
+        ],
+        "id": 89012345,
+        "seller": 69382741
+    },
+    {
+        "name": "chicory",
+        "description": "Healthy and natural chicory.",
+        "price": 3.99,
+        "category": [
+            "food",
+            "vegetable"
+        ],
+        "id": 90123456,
+        "seller": 69382741
+    },
+    {
+        "name": "choco-biscuit",
+        "description": "Delicious chocolate-flavored biscuits.",
+        "price": 2.99,
+        "category": [
+            "food",
+            "snack"
+        ],
+        "id": 24578921,
+        "seller": 69382741
+    },
+    {
+        "name": "choco-mushrooms",
+        "description": "Mushroom-shaped chocolate candies.",
+        "price": 4.99,
+        "category": [
+            "food",
+            "candy"
+        ],
+        "id": 38956214,
+        "seller": 69382741
+    },
+    {
+        "name": "choco-pie",
+        "description": "A tasty choco pie for your sweet tooth.",
+        "price": 3.49,
+        "category": [
+            "food",
+            "dessert"
+        ],
+        "id": 48102567,
+        "seller": 69382741
+    },
+    {
+        "name": "chocolate-chip-cookies",
+        "description": "Crunchy cookies with chocolate chips.",
+        "price": 5.99,
+        "category": [
+            "food",
+            "snack"
+        ],
+        "id": 35790123,
+        "seller": 69382741
+    },
+    {
+        "name": "coffee-beans",
+        "description": "Premium quality coffee beans.",
+        "price": 12.99,
+        "category": [
+            "food",
+            "beverage"
+        ],
+        "id": 29934156,
+        "seller": 69382741
+    },
+    {
+        "name": "coffee-machine",
+        "description": "Automatic coffee machine for barista-quality coffee.",
+        "price": 89.99,
+        "category": [
+            "home",
+            "kitchen"
+        ],
+        "id": 34789201,
+        "seller": 94578231
+    },
+    {
+        "name": "cookies",
+        "description": "Assorted cookies for every occasion.",
+        "price": 4.49,
+        "category": [
+            "food",
+            "snack"
+        ],
+        "id": 40876239,
+        "seller": 69382741
+    },
+    {
+        "name": "crab-stick",
+        "description": "Fresh crab sticks for your meals.",
+        "price": 6.99,
+        "category": [
+            "food",
+            "seafood"
+        ],
+        "id": 21456387,
+        "seller": 69382741
+    },
+    {
+        "name": "cream-cheese",
+        "description": "Smooth and creamy cheese.",
+        "price": 3.99,
+        "category": [
+            "food",
+            "dairy"
+        ],
+        "id": 57249103,
+        "seller": 69382741
+    },
+    {
+        "name": "dog-food",
+        "description": "Nutritious food for your dog.",
+        "price": 15.99,
+        "category": [
+            "pet",
+            "food"
+        ],
+        "id": 34125789,
+        "seller": 84659123
+    },
+    {
+        "name": "ear-rings",
+        "description": "Elegant earrings for any occasion.",
+        "price": 24.99,
+        "category": [
+            "fashion",
+            "jewelry"
+        ],
+        "id": 46729381,
+        "seller": 91576243
+    },
+    {
+        "name": "earphones",
+        "description": "High-quality earphones with clear sound.",
+        "price": 15.99,
+        "category": [
+            "electronics",
+            "audio"
+        ],
+        "id": 24587930,
+        "seller": 81675439
+    },
+    {
+        "name": "eggs",
+        "description": "Fresh farm eggs.",
+        "price": 2.49,
+        "category": [
+            "food",
+            "dairy"
+        ],
+        "id": 25789412,
+        "seller": 69382741
+    },
+    {
+        "name": "flex-tape",
+        "description": "Strong and flexible tape for repairs.",
+        "price": 11.99,
+        "category": [
+            "home",
+            "tools"
+        ],
+        "id": 26478931,
+        "seller": 93657281
+    },
+    {
+        "name": "flour",
+        "description": "High-quality baking flour.",
+        "price": 1.99,
+        "category": [
+            "food",
+            "baking"
+        ],
+        "id": 49301627,
+        "seller": 69382741
+    },
+    {
+        "name": "frozen-nuggets",
+        "description": "Frozen chicken nuggets.",
+        "price": 7.99,
+        "category": [
+            "food",
+            "frozen"
+        ],
+        "id": 32189465,
+        "seller": 69382741
+    },
+    {
+        "name": "greenfields-tea",
+        "description": "Refreshing Greenfields tea.",
+        "price": 5.49,
+        "category": [
+            "food",
+            "beverage"
+        ],
+        "id": 21456839,
+        "seller": 69382741
+    },
+    {
+        "name": "hair-curler",
+        "description": "High-quality hair curler for perfect curls.",
+        "price": 29.99,
+        "category": [
+            "personal care",
+            "beauty"
+        ],
+        "id": 28739156,
+        "seller": 84675931
+    },
+    {
+        "name": "handbag",
+        "description": "Stylish handbag with plenty of space.",
+        "price": 54.99,
+        "category": [
+            "fashion",
+            "accessories"
+        ],
+        "id": 29657483,
+        "seller": 91576243
+    },
+    {
+        "name": "high-heels",
+        "description": "Stylish high heels for special occasions.",
+        "price": 49.99,
+        "category": [
+            "fashion",
+            "footwear"
+        ],
+        "id": 27981534,
+        "seller": 91576243
+    },
+    {
+        "name": "kidney-beans",
+        "description": "High-protein kidney beans.",
+        "price": 2.79,
+        "category": [
+            "food",
+            "legume"
+        ],
+        "id": 35689012,
+        "seller": 69382741
+    },
+    {
+        "name": "laundry-shelf",
+        "description": "Organize your laundry with this shelf.",
+        "price": 39.99,
+        "category": [
+            "home",
+            "furniture"
+        ],
+        "id": 35798462,
+        "seller": 92657381
+    },
+    {
+        "name": "long-dress",
+        "description": "Elegant long dress for evening wear.",
+        "price": 79.99,
+        "category": [
+            "fashion",
+            "clothing"
+        ],
+        "id": 49781230,
+        "seller": 91576243
+    },
+    {
+        "name": "long-pants",
+        "description": "Comfortable and stylish long pants.",
+        "price": 39.99,
+        "category": [
+            "fashion",
+            "clothing"
+        ],
+        "id": 31648972,
+        "seller": 91576243
+    },
+    {
+        "name": "maggi-stock",
+        "description": "Flavorful Maggi stock cubes.",
+        "price": 1.49,
+        "category": [
+            "food",
+            "condiment"
+        ],
+        "id": 48723154,
+        "seller": 69382741
+    },
+    {
+        "name": "mayonaise",
+        "description": "Creamy mayonnaise for your sandwiches.",
+        "price": 3.49,
+        "category": [
+            "food",
+            "condiment"
+        ],
+        "id": 28964357,
+        "seller": 69382741
+    },
+    {
+        "name": "melon-tea",
+        "description": "Sweet and refreshing tea with melon taste.",
+        "price": 2.99,
+        "category": [
+            "food",
+            "beverage"
+        ],
+        "id": 39821457,
+        "seller": 69382741
+    },
+    {
+        "name": "milk",
+        "description": "Fresh dairy milk.",
+        "price": 2.99,
+        "category": [
+            "food",
+            "dairy"
+        ],
+        "id": 31427895,
+        "seller": 69382741
+    },
+    {
+        "name": "pads",
+        "description": "Comfortable and absorbent pads.",
+        "price": 4.99,
+        "category": [
+            "personal care",
+            "hygiene"
+        ],
+        "id": 39284715,
+        "seller": 81239475
+    },
+    {
+        "name": "pajama-pants",
+        "description": "Cozy pajama pants for a good night’s sleep.",
+        "price": 19.99,
+        "category": [
+            "fashion",
+            "clothing"
+        ],
+        "id": 38749216,
+        "seller": 91576243
+    },
+    {
+        "name": "pan",
+        "description": "Non-stick pan for easy cooking.",
+        "price": 24.99,
+        "category": [
+            "home",
+            "kitchen"
+        ],
+        "id": 19587432,
+        "seller": 94578231
+    },
+    {
+        "name": "pickles",
+        "description": "Tangy and crunchy pickles.",
+        "price": 3.29,
+        "category": [
+            "food",
+            "condiment"
+        ],
+        "id": 25834791,
+        "seller": 69382741
+    },
+    {
+        "name": "pizza-base",
+        "description": "Ready-to-use pizza base.",
+        "price": 3.99,
+        "category": [
+            "food",
+            "baking"
+        ],
+        "id": 41723958,
+        "seller": 69382741
+    },
+    {
+        "name": "pizza-roll",
+        "description": "Frozen pizza rolls for quick snacks.",
+        "price": 6.49,
+        "category": [
+            "food",
+            "frozen"
+        ],
+        "id": 38129465,
+        "seller": 69382741
+    },
+    {
+        "name": "printer-paper",
+        "description": "High-quality paper for your printer.",
+        "price": 6.99,
+        "category": [
+            "office",
+            "supplies"
+        ],
+        "id": 36729145,
+        "seller": 93657481
+    },
+    {
+        "name": "ring",
+        "description": "Beautiful ring with intricate design.",
+        "price": 49.99,
+        "category": [
+            "fashion",
+            "jewelry"
+        ],
+        "id": 26547831,
+        "seller": 91576243
+    },
+    {
+        "name": "sausage",
+        "description": "Juicy and flavorful sausages.",
+        "price": 5.99,
+        "category": [
+            "food",
+            "meat"
+        ],
+        "id": 49678123,
+        "seller": 69382741
+    },
+    {
+        "name": "shelf",
+        "description": "Sturdy and stylish shelf for storage.",
+        "price": 59.99,
+        "category": [
+            "home",
+            "furniture"
+        ],
+        "id": 28473591,
+        "seller": 92657381
+    },
+    {
+        "name": "shower-head",
+        "description": "High-pressure shower head.",
+        "price": 14.99,
+        "category": [
+            "home",
+            "bath"
+        ],
+        "id": 21548963,
+        "seller": 68341278
+    },
+    {
+        "name": "skirt",
+        "description": "Fashionable skirt for casual and formal wear.",
+        "price": 35.99,
+        "category": [
+            "fashion",
+            "clothing"
+        ],
+        "id": 28937456,
+        "seller": 91576243
+    },
+    {
+        "name": "smoked-spruts",
+        "description": "Delicious smoked spruts.",
+        "price": 7.49,
+        "category": [
+            "food",
+            "seafood"
+        ],
+        "id": 35612479,
+        "seller": 69382741
+    },
+    {
+        "name": "sneakers",
+        "description": "Comfortable and durable sneakers.",
+        "price": 39.99,
+        "category": [
+            "fashion",
+            "footwear"
+        ],
+        "id": 45782910,
+        "seller": 91576243
+    },
+    {
+        "name": "spaghetti",
+        "description": "Italian-style spaghetti pasta.",
+        "price": 2.99,
+        "category": [
+            "food",
+            "pasta"
+        ],
+        "id": 47812954,
+        "seller": 69382741
+    },
+    {
+        "name": "stuffed-blin",
+        "description": "Stuffed blin with meat filling.",
+        "price": 8.99,
+        "category": [
+            "food",
+            "frozen"
+        ],
+        "id": 32189476,
+        "seller": 69382741
+    },
+    {
+        "name": "sun-cream",
+        "description": "Protect your skin with this sun cream.",
+        "price": 14.99,
+        "category": [
+            "personal care",
+            "skincare"
+        ],
+        "id": 38729451,
+        "seller": 83659472
+    },
+    {
+        "name": "sunglasses",
+        "description": "Trendy sunglasses with UV protection.",
+        "price": 19.99,
+        "category": [
+            "fashion",
+            "accessories"
+        ],
+        "id": 37892456,
+        "seller": 91576243
+    },
+    {
+        "name": "tess-tea",
+        "description": "Premium Tess tea selection.",
+        "price": 5.99,
+        "category": [
+            "food",
+            "beverage"
+        ],
+        "id": 21436789,
+        "seller": 69382741
+    },
+    {
+        "name": "tights",
+        "description": "Comfortable and stretchy tights.",
+        "price": 12.99,
+        "category": [
+            "fashion",
+            "clothing"
+        ],
+        "id": 31467825,
+        "seller": 91576243
+    },
+    {
+        "name": "toaster",
+        "description": "Compact toaster with multiple settings.",
+        "price": 29.99,
+        "category": [
+            "home",
+            "kitchen"
+        ],
+        "id": 27894561,
+        "seller": 94578231
+    },
+    {
+        "name": "toilet-roll",
+        "description": "Soft and durable toilet roll.",
+        "price": 6.99,
+        "category": [
+            "home",
+            "hygiene"
+        ],
+        "id": 48927315,
+        "seller": 81239475
+    },
+    {
+        "name": "tomato-sauce",
+        "description": "Rich and tangy tomato sauce.",
+        "price": 3.49,
+        "category": [
+            "food",
+            "condiment"
+        ],
+        "id": 31427891,
+        "seller": 69382741
+    },
+    {
+        "name": "waffles",
+        "description": "Crispy and golden waffles.",
+        "price": 4.99,
+        "category": [
+            "food",
+            "snack"
+        ],
+        "id": 25834765,
+        "seller": 69382741
+    },
+    {
+        "name": "wireless-earphones",
+        "description": "High-quality wired earphones with clear sound.",
+        "price": 13.99,
+        "category": [
+            "electronics",
+            "audio"
+        ],
+        "id": 24587932,
+        "seller": 81675439
+    },
+    {
+        "name": "yoga-mat",
+        "description": "Non-slip yoga mat for comfortable workouts.",
+        "price": 20.99,
+        "category": [
+            "sports",
+            "fitness"
+        ],
+        "id": 13578923,
+        "seller": 74589320
+    }
+]

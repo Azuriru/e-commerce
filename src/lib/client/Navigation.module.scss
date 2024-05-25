@@ -1,0 +1,27 @@
+.navigation {
+    @include flex(evenly);
+    background: gray;
+}
+
+.navigation-option {
+    @include flex(column, centerY);
+    gap: v(1);
+    padding: v(1);
+    width: v(16);
+    position: relative;
+}
+
+.navigation-option-text {
+    font-size: smaller;
+}
+
+.cart-items {
+    @include flex;
+    font-size: 10px;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    background: red;
+    padding: 2px;
+    border-radius: 100%;
+}
