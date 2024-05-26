@@ -1,6 +1,5 @@
 #app {
     @include flex(column);
-    @include max(sm);
     height: 100%;
     margin: auto;
 }

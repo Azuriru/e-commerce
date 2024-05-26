@@ -32,6 +32,10 @@
     padding: v(6);
 }
 
+.cart-group-unavailable .cart-item {
+    filter: opacity(0.5);
+}
+
 .cart-group-seller {
     @include flex(centerY);
     gap: v(4);
@@ -50,8 +54,11 @@
 .cart-item-image {
     @include flex;
     @include position(relative);
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid darkgray;
+    border-radius: v(2);
+    overflow: hidden;
 }
 
 .cart-item-details {

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { type ChangeEvent, useEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import { useEffect, useState, type Dispatch, type SetStateAction, type ChangeEvent } from 'react';
 
 import { useDispatch, useSelector } from '$lib/redux';
 import { add, empty, modify, remove, subtract } from '$lib/redux/cart';
@@ -15,6 +15,7 @@ import styles from './page.module.scss';
 import availableProducts, { allProducts, unavailableProducts } from '$lib/util/client/products';
 import _products from '$lib/products.json'; // Product[]
 import _sellers from '$lib/sellers.json'; // Record<ObjectProperty, Seller>
+import { conditional } from '$lib/util/react';
 
 type CartSelectedState = Record<ObjectProperty, boolean>;
 
@@ -39,12 +40,22 @@ function getProduct(productId: string) {
     return _products.find(({ id }) => id.toString() === productId) as Product;
 }
 
-function getProducts(cart: Cart): Record<string, CartItemProps[]> {
-    return Object.entries(cart)
-        .map(([id, quantity]) => ({
-            ...getProduct(id),
-            quantity
-        }))
+function getProducts(cart: Cart): [Record<string, CartItemProps[]>, Product[]] {
+    const unavailable: Product[] = [];
+    const available = Object.entries(cart)
+        .flatMap(([id, quantity]) => {
+            const product = getProduct(id);
+            if (availableProducts.some(({ id: _id }) => _id.toString() === id)) {
+                return {
+                    ...getProduct(id),
+                    quantity
+                };
+            }
+
+            unavailable.push(product);
+
+            return [];
+        })
         .reduce((groups, product) => {
             const { seller } = product;
             if (!groups[seller]) {
@@ -54,6 +65,30 @@ function getProducts(cart: Cart): Record<string, CartItemProps[]> {
 
             return groups;
         }, {});
+
+    return [available, unavailable];
+}
+
+function CartItemUnavailable({ name, id, price }: Product) {
+    return (
+        <div className={styles.cartItem}>
+            <Link className={styles.cartItemImage} href={'products/' + id}>
+                <Image
+                    src={`/products/${name}.png`}
+                    alt={name}
+                    layout="fill"
+                />
+            </Link>
+            <div className={styles.cartItemDetails}>
+                <div className={styles.cartItemName}>
+                    {name.split('-').map((part) => capitalize(part)).join(' ')}
+                </div>
+                <div className={styles.cartItemInfo}>
+                    <div className={styles.cartItemPrice}>¥ {price}</div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 function CartItem({ name, id, price, quantity, cartSelected, setCartSelected }: CartItemProps) {
@@ -131,7 +166,7 @@ export default function Cart() {
     const cart = useSelector((state) => state.cart);
     const [cartSelected, setCartSelected] = useState<CartSelectedState>({});
     const [cartTotal, setCartTotal] = useState(0);
-    const cartProducts = getProducts(cart);
+    const [cartProducts, unavailableCartProducts] = getProducts(cart);
     const onClick = () => dispatch(empty());
 
     useEffect(() => {
@@ -161,6 +196,21 @@ export default function Cart() {
                             />
                         );
                     })
+                }
+                {
+                    conditional(
+                        unavailableCartProducts.length,
+                        <div className={`${styles.cartGroup} ${styles.cartGroupUnavailable}`}>
+                            <div className={styles.cartGroupSeller}>
+                    Unavailable items
+                            </div>
+                            <div className={styles.cartGroupProducts}>
+                                {
+                                    unavailableCartProducts.map((product) => <CartItemUnavailable key={product.id} {...product} />)
+                                }
+                            </div>
+                        </div>
+                    )
                 }
             </div>
             <div className={styles.cartCheckoutHeader}>

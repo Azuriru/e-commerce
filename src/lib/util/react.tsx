@@ -32,3 +32,11 @@ export function multiref(...refs: MutableRefObject<Element | null>[]): (elem: El
 
     return callback;
 }
+
+export function conditional(condition: unknown, element: JSX.Element, fallback?: JSX.Element) {
+    if (condition) {
+        return element;
+    } else {
+        return fallback ?? null;
+    }
+}
