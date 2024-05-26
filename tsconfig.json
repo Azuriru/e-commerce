@@ -5,6 +5,8 @@
             "dom.iterable",
             "esnext"
         ],
+        "forceConsistentCasingInFileNames": true,
+        "verbatimModuleSyntax": true,
         "strictNullChecks": true,
         "noImplicitAny": false,
         "allowJs": true,
