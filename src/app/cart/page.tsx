@@ -72,7 +72,7 @@ function getProducts(cart: Cart): [Record<string, CartItemProps[]>, Product[]] {
 function CartItemUnavailable({ name, id, price }: Product) {
     return (
         <div className={styles.cartItem}>
-            <Link className={styles.cartItemImage} href={'products/' + id}>
+            <Link className={styles.cartItemImage} href={'#' + id}>
                 <Image
                     src={`/products/${name}.png`}
                     alt={name}
@@ -106,7 +106,7 @@ function CartItem({ name, id, price, quantity, cartSelected, setCartSelected }: 
     return (
         <div className={styles.cartItem}>
             <input type="checkbox" checked={cartSelected[id] ?? false} className={styles.cartItemSelected} onChange={onItemSelect} />
-            <Link className={styles.cartItemImage} href={'products/' + id}>
+            <Link className={styles.cartItemImage} href={'#' + id}>
                 <Image
                     src={`/products/${name}.png`}
                     alt={name}
@@ -135,6 +135,7 @@ function CartItem({ name, id, price, quantity, cartSelected, setCartSelected }: 
 }
 
 function CartGroup({ id, products, cartSelected, setCartSelected }: CartGroupProps) {
+    const dispatch = useDispatch();
     const onGroupSelect = (event: ChangeEvent<HTMLInputElement>) => setCartSelected((state) => {
         const { ..._state } = state;
 
@@ -144,6 +145,7 @@ function CartGroup({ id, products, cartSelected, setCartSelected }: CartGroupPro
 
         return _state;
     });
+    const onRemove = () => products.forEach((product) => dispatch(remove({ id: product.id })));
 
     return (
         <div className={styles.cartGroup}>
@@ -151,6 +153,7 @@ function CartGroup({ id, products, cartSelected, setCartSelected }: CartGroupPro
                 <input type="checkbox" checked={products.every(({ id }) => cartSelected[id])} className={styles.cartGroupSelected} onChange={onGroupSelect} />
                 <Icon name="storefront" />
                 {capitalize(getSeller(id))}
+                <div className={styles.cartGroupRemove} onClick={onRemove}>Remove</div>
             </div>
             <div className={styles.cartGroupProducts}>
                 {
@@ -168,6 +171,7 @@ export default function Cart() {
     const [cartTotal, setCartTotal] = useState(0);
     const [cartProducts, unavailableCartProducts] = getProducts(cart ?? {});
     const onClick = () => dispatch(empty());
+    const onRemove = () => unavailableCartProducts.forEach((product) => dispatch(remove({ id: product.id })));
 
     useEffect(() => {
         const total = Object.values(cartProducts).flat().reduce((total, product) => {
@@ -202,7 +206,8 @@ export default function Cart() {
                         unavailableCartProducts.length,
                         <div className={`${styles.cartGroup} ${styles.cartGroupUnavailable}`}>
                             <div className={styles.cartGroupSeller}>
-                    Unavailable items
+                                Unavailable items
+                                <div className={styles.cartGroupRemove} onClick={onRemove}>Remove</div>
                             </div>
                             <div className={styles.cartGroupProducts}>
                                 {

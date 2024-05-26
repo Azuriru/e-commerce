@@ -25,7 +25,7 @@ function Product({ name, price, id }: Product) {
     };
 
     return (
-        <Link className={styles.product} href={'products/' + id}>
+        <Link className={styles.product} href={'#' + id}>
             <Image
                 className={styles.productImage}
                 src={`/products/${name}.png`}

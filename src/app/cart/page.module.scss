@@ -41,6 +41,10 @@
     gap: v(4);
 }
 
+.cart-group-remove {
+    margin-left: auto;
+}
+
 .cart-group-products {
     @include flex(column);
     gap: v(4);
