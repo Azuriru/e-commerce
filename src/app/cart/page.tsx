@@ -6,7 +6,7 @@ import { useEffect, useState, type Dispatch, type SetStateAction, type ChangeEve
 
 import { useDispatch, useSelector } from '$lib/redux';
 import { add, empty, modify, remove, subtract } from '$lib/redux/cart';
-import { ObjectProperty } from '$lib/util/types';
+import { type ObjectProperty } from '$lib/util/types';
 import { capitalize } from '$lib/util/string';
 import { Icon } from '$lib/components';
 
@@ -166,7 +166,7 @@ export default function Cart() {
     const cart = useSelector((state) => state.cart);
     const [cartSelected, setCartSelected] = useState<CartSelectedState>({});
     const [cartTotal, setCartTotal] = useState(0);
-    const [cartProducts, unavailableCartProducts] = getProducts(cart);
+    const [cartProducts, unavailableCartProducts] = getProducts(cart ?? {});
     const onClick = () => dispatch(empty());
 
     useEffect(() => {

@@ -1,16 +1,16 @@
-import { useState, useCallback, useRef, useMemo, RefObject } from 'react';
+import { useState, useCallback, useRef, useMemo, type RefObject } from 'react';
 import useMouseTracker from './useMouseTracker.old';
 import assert from 'assertmin';
 import { shallowMerge } from '../util/object';
 
 export type Size = {
     width: number;
-    height: number
+    height: number;
 };
 
 type InitialOffset = {
     top: number;
-    left: number
+    left: number;
 };
 
 enum Direction {
@@ -21,9 +21,9 @@ enum Direction {
 }
 
 type MouseTransformOptions = {
-    minSize?: Size,
-    initialSize?: Size,
-    initialOffset?: InitialOffset,
+    minSize?: Size;
+    initialSize?: Size;
+    initialOffset?: InitialOffset;
 };
 
 export default function useMouseTransform(
@@ -142,13 +142,13 @@ export default function useMouseTransform(
 
             // Only set the state when a relevant field has been updated
             if (newWidth !== undefined || newHeight !== undefined) {
-                setSize(size => shallowMerge(size, {
+                setSize((size) => shallowMerge(size, {
                     width: newWidth ?? size?.width ?? 0,
                     height: newHeight ?? size?.height ?? 0
                 }));
             }
             if (newTop !== undefined || newLeft !== undefined) {
-                setOffset(offset => shallowMerge(offset, {
+                setOffset((offset) => shallowMerge(offset, {
                     top: newTop ?? offset?.top ?? 0,
                     left: newLeft ?? offset?.left ?? 0
                 }));
@@ -162,12 +162,14 @@ export default function useMouseTransform(
         return useMemo(() => {
             return {
                 transform: `translate(${offset?.left ?? 0}px, ${offset?.top ?? 0}px)`,
+
                 // minWidth: minSize?.width,
                 // minHeight: minSize?.height,
                 width: size?.width ?? initialSize?.width,
                 height: size?.height ?? initialSize?.height,
                 ...rest
             };
+
         // This is wrong.
         // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [rest, size, offset]);

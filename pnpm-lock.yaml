@@ -37,6 +37,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18
     version: 18.3.0
+  assertmin:
+    specifier: ^0.3.5
+    version: 0.3.5
   classnames:
     specifier: ^2.5.1
     version: 2.5.1
@@ -811,6 +814,10 @@ packages:
       get-intrinsic: 1.2.4
       is-array-buffer: 3.0.4
       is-shared-array-buffer: 1.0.3
+    dev: true
+
+  /assertmin@0.3.5:
+    resolution: {integrity: sha512-dtbudO8mnoJcPEfI/E0hWY3WsdzLkWMGP1SgTGOSdytxXIbEqmQpMVyT9ZBcYd75LxLNl2MccxSAy2mNiXw6fA==}
     dev: true
 
   /ast-types-flow@0.0.8:

@@ -6,20 +6,19 @@
             "esnext"
         ],
         "forceConsistentCasingInFileNames": true,
-        "verbatimModuleSyntax": true,
+        "moduleResolution": "node",
+        "jsx": "preserve",
         "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "noImplicitAny": false,
         "allowJs": true,
         "skipLibCheck": true,
-        "strict": true,
+        "strict": false,
         "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
         "incremental": true,
+        "module": "esnext",
+        "isolatedModules": true,
         "plugins": [
             {
                 "name": "next"
@@ -29,7 +28,7 @@
             "$lib/*": [
                 "./src/lib/*"
             ]
-        }
+        },
     },
     "include": [
         "next-env.d.ts",

@@ -14,16 +14,12 @@ import storage from 'redux-persist/lib/storage';
 
 import counter from './counter';
 import cart from './cart';
-import apps from './apps';
-import instances from './instances';
 
 import { useStore as useReduxStore } from 'react-redux';
 
 const reducers = combineReducers({
     counter,
-    cart,
-    apps,
-    instances
+    cart
 });
 const persistConfig = {
     key: 'root',

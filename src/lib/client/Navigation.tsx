@@ -29,7 +29,7 @@ const options: OptionProps[] = [
 
 export default function Navigation() {
     const cart = useSelector((state) => state.cart);
-    const items = Object.values(cart).reduce((current, accumulator) => current + accumulator, 0);
+    const items = Object.values(cart ?? {}).reduce((current, accumulator) => current + accumulator, 0);
 
     return (
         <nav className={styles.navigation}>

@@ -1,4 +1,4 @@
-import { Component, FC, MutableRefObject, ReactNode } from 'react';
+import { Component, type FC, type MutableRefObject, type ReactNode } from 'react';
 
 export function nested(...components: (FC | typeof Component | Record<string, any>)[]): JSX.Element {
     if (components.length === 0) {
