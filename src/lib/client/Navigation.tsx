@@ -2,6 +2,8 @@
 import type { MaterialSymbol } from 'material-symbols';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import className from 'classnames';
 import { Icon } from '$lib/components';
 import { capitalize } from '$lib/util/string';
 import { useSelector } from '$lib/redux';
@@ -30,13 +32,18 @@ const options: OptionProps[] = [
 export default function Navigation() {
     const cart = useSelector((state) => state.cart);
     const items = Object.values(cart ?? {}).reduce((current, accumulator) => current + accumulator, 0);
+    const path = usePathname();
 
     return (
         <nav className={styles.navigation}>
             {
                 options.map(({ icon, name }: OptionProps) => {
                     return (
-                        <Link key={name} href={`/${name}`} className={styles.navigationOption}>
+                        <Link
+                            key={name}
+                            href={`/${name}`}
+                            className={className(styles.navigationOption, path === `/${name}` && styles.navigationOptionActive)}
+                        >
                             <Icon name={icon} size={26} />
                             {
                                 name === 'cart' && items > 0 && <div className={styles.cartItems}>{items}</div>

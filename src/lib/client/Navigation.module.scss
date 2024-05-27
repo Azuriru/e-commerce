@@ -11,6 +11,10 @@
     padding: v(1);
     width: v(16);
     position: relative;
+
+    &.navigation-option-active {
+        color: #11c4d1;
+    }
 }
 
 .navigation-option-text {
@@ -25,6 +29,6 @@
     right: 10px;
     background: red;
     color: white;
-    padding: 2px;
+    padding: 2px 4px;
     border-radius: 100%;
 }
