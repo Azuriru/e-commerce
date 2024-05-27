@@ -9,10 +9,11 @@ import { add, empty, modify, remove, subtract } from '$lib/redux/cart';
 import { type ObjectProperty } from '$lib/util/types';
 import { capitalize } from '$lib/util/string';
 import { Icon } from '$lib/components';
+import classNames from 'classnames';
 
 import styles from './page.module.scss';
 
-import availableProducts, { allProducts, unavailableProducts } from '$lib/util/client/products';
+import availableProducts from '$lib/util/client/products';
 import _products from '$lib/products.json'; // Product[]
 import _sellers from '$lib/sellers.json'; // Record<ObjectProperty, Seller>
 import { conditional } from '$lib/util/react';
@@ -165,13 +166,26 @@ function CartGroup({ id, products, cartSelected, setCartSelected }: CartGroupPro
 }
 
 export default function Cart() {
-    const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
+    const items = Object.values(cart ?? {}).reduce((current, accumulator) => current + accumulator, 0);
     const [cartSelected, setCartSelected] = useState<CartSelectedState>({});
     const [cartTotal, setCartTotal] = useState(0);
     const [cartProducts, unavailableCartProducts] = getProducts(cart ?? {});
+
+    const dispatch = useDispatch();
     const onClick = () => dispatch(empty());
     const onRemove = () => unavailableCartProducts.forEach((product) => dispatch(remove({ id: product.id })));
+    const onSelect = (event: ChangeEvent<HTMLInputElement>) => setCartSelected(() => {
+        // You don't care if there were any that was checked
+        // since you're setting it all to the same state anyway
+        const _state = {};
+
+        for (const { id } of Object.values(cartProducts).flat()) {
+            _state[id] = event.target.checked;
+        }
+
+        return _state;
+    });
 
     useEffect(() => {
         const total = Object.values(cartProducts).flat().reduce((total, product) => {
@@ -186,8 +200,40 @@ export default function Cart() {
 
     return (
         <div className={styles.cart}>
-            <div className={styles.cartHeader}>Cart</div>
+            <div className={styles.cartHeader}>
+                <div className={styles.cartHeaderWrapper}>
+                    <Link
+                        href="/products"
+                        className={styles.cartNavigationOption}
+                    >
+                        <Icon name="shopping_bag" size={26} />
+                        Shop
+                    </Link>
+                    <Link
+                        href="/account"
+                        className={styles.cartNavigationOption}
+                    >
+                        <Icon name="account_circle" size={26} />
+                    </Link>
+                </div>
+            </div>
+
+            <div className={classNames(styles.cartGroup, styles.cartGroupAll)}>
+                <label className={styles.cartGroupAllSelected}>
+                    <input type="checkbox" checked={Object.values(cartProducts).flat().every(({ id }) => cartSelected[id])} onChange={onSelect} />
+                    <span>Select All</span>
+                </label>
+                <div className={styles.cartEmpty} onClick={onClick}>Remove All</div>
+            </div>
             <div className={styles.cartGroups}>
+                {
+                    conditional(
+                        !items,
+                        <div className={classNames(styles.cartGroup, styles.cartGroupEmpty)}>
+                            Cart's a lil empty. Go shopping?
+                        </div>
+                    )
+                }
                 {
                     Object.entries(cartProducts).map(([id, products]) => {
                         return (
@@ -219,8 +265,10 @@ export default function Cart() {
                 }
             </div>
             <div className={styles.cartCheckoutHeader}>
-                <div className={styles.cartEmpty} onClick={onClick}>Clear All</div>
-                <div className={styles.cartTotal}>Total: {cartTotal.toFixed(2)}</div>
+                <div className={styles.cartCheckoutHeaderWrapper}>
+
+                    <div className={styles.cartTotal}>Total: {cartTotal.toFixed(2)}</div>
+                </div>
             </div>
         </div>
     );

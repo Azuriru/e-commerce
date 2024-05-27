@@ -1,7 +1,6 @@
 .products {
     @include flex(column, grow);
     width: 100%;
-    // padding: v(2);
 }
 
 .product-header {
@@ -11,9 +10,48 @@
     padding: v(4) v(6);
 }
 
+.product-user-header,
+.product-list-options,
+.product-list {
+    @include max(lg);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.product-user-header {
+    @include flex(centerY);
+    gap: v(2);
+    color: white;
+}
+
+.product-navigation-option {
+    @include flex(column, centerY);
+    padding: v(1);
+    width: v(8);
+    height: v(8);
+    position: relative;
+
+    @include maxpoint(lg) {
+        display: none;
+    }
+
+    & .cart-items {
+        @include flex;
+        font-size: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: red;
+        color: white;
+        padding: 2px 4px;
+        border-radius: 100%;
+    }
+}
+
 .product-search {
     @include flex(grow);
     background: white;
+    color: black;
     padding: v(2) v(3);
     border-radius: v(1);
 }
@@ -39,13 +77,17 @@
     gap: v(1);
 }
 
-.product-list {
-    @include flex(wrap);
-    // height: 100%;
-    background: #f3f3f3;
+.product-list-wrapper {
+    @include flex(column);
     overflow: auto;
     gap: v(6);
     padding: v(6);
+}
+
+.product-list {
+    @include flex(wrap);
+    // height: 100%;
+    gap: v(6);
 }
 
 .product {
@@ -94,7 +136,7 @@
     z-index: 10;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
     pointer-events: none;
 
     @include breakpoint(md) {

@@ -1,8 +1,12 @@
 .navigation {
-    @include flex(evenly);
+    @include flex(hidden, evenly);
     background: white;
     box-shadow: 0 0 6px #c3c3c3;
     color: gray;
+
+    @include maxpoint(lg) {
+        display: flex;
+    }
 }
 
 .navigation-option {

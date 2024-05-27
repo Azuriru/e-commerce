@@ -1,19 +1,53 @@
 .cart {
     @include flex(column, grow);
-    background-image: linear-gradient(to right, #0cbadf, #1eddb2);
 }
 
 .cart-header {
-    @include flex(center);
+    @include flex();
     font-size: larger;
     color: white;
     padding: v(4) v(6);
+    background: $background;
+
+    @include maxpoint(lg) {
+        display: none;
+    }
+}
+
+.cart-header-wrapper,
+.cart-checkout-header-wrapper,
+.cart-group {
+    @include max(lg);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cart-header-wrapper {
+    @include flex(centerY, between);
+}
+
+.cart-navigation-option {
+    @include flex(center);
+    padding: v(1);
+    height: v(8);
+    gap: v(1);
+    position: relative;
 }
 
 .cart-checkout-header {
-    @include flex(between);
+    @include flex;
     color: white;
     padding: v(4) v(6);
+    background: $background;
+}
+
+.cart-checkout-header-wrapper {
+    @include flex(between);
+}
+
+.cart-checkout-options {
+    @include flex;
+    gap: v(2);
 }
 
 .cart-groups {
@@ -30,6 +64,23 @@
     border-radius: v(4);
     gap: v(4);
     padding: v(6);
+
+    &.cart-group-empty {
+        @include flex(center);
+        height: 100%;
+    }
+
+    &.cart-group-all {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 24px auto;
+        padding: v(2) v(6);
+
+        & .cart-group-all-selected {
+            @include flex(centerY);
+            gap: v(4);
+        }
+    }
 }
 
 .cart-group-unavailable .cart-item {

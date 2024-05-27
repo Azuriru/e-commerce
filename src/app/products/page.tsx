@@ -3,12 +3,12 @@
 import { type MouseEventHandler } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Icon, Divider } from '$lib/components';
+import { Icon } from '$lib/components';
 
 import { copy } from '$lib/util/array';
 import { capitalize } from '$lib/util/string';
 import { add } from '$lib/redux/cart';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from '$lib/redux';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames';
 
@@ -52,6 +52,8 @@ export default function Home() {
     const [filterShown, setFilterShown] = useState(false);
     const [search, setSearch] = useState('');
     const [sort, setSort] = useState<'alphabetical' | 'alphabetical-reversed' | 'price' | 'price-reversed'>('alphabetical');
+    const cart = useSelector((state) => state.cart);
+    const items = Object.values(cart ?? {}).reduce((current, accumulator) => current + accumulator, 0);
     const categories: string[] = availableProducts.reduce((categories, current) => {
         for (const category of current.category) {
             if (!categories.includes(category)) {
@@ -95,14 +97,32 @@ export default function Home() {
         <>
             <div className={styles.products}>
                 <div className={styles.productHeader}>
-                    <input
-                        name="search"
-                        type="text"
-                        value={search}
-                        className={styles.productSearch}
-                        placeholder="Search for a product"
-                        onInput={onSearch}
-                    />
+                    <div className={styles.productUserHeader}>
+                        <input
+                            name="search"
+                            type="text"
+                            value={search}
+                            className={styles.productSearch}
+                            placeholder="Search for a product"
+                            onInput={onSearch}
+                        />
+                        <Icon name="search" />
+                        <Link
+                            href="/cart"
+                            className={styles.productNavigationOption}
+                        >
+                            <Icon name="shopping_cart" size={26} />
+                            {
+                                items > 0 && <div className={styles.cartItems}>{items}</div>
+                            }
+                        </Link>
+                        <Link
+                            href="/account"
+                            className={styles.productNavigationOption}
+                        >
+                            <Icon name="account_circle" size={26} />
+                        </Link>
+                    </div>
                     <div className={styles.productListOptions}>
                         <div className={styles.productListOption} onClick={() => sort === 'alphabetical' ? setSort('alphabetical-reversed') : setSort('alphabetical')}>
                             <Icon name="sort_by_alpha" />
@@ -128,10 +148,12 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.productList}>
-                    {
-                        products.map((product) => <Product key={product.id} {...product} />)
-                    }
+                <div className={styles.productListWrapper}>
+                    <div className={styles.productList}>
+                        {
+                            products.map((product) => <Product key={product.id} {...product} />)
+                        }
+                    </div>
                 </div>
             </div>
             <div className={classNames(styles.productFiltersModal, filterShown && styles.shown)}>
