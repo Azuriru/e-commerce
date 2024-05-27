@@ -167,3 +167,24 @@
     background-color: #fff;
     padding: 0 v(1);
 }
+
+// lol
+.cart input[type='checkbox'] {
+    display: none;
+
+    & + .cart-checkbox > *:first-of-type {
+        display: flex;
+    }
+
+    & + .cart-checkbox > *:last-of-type {
+        display: none;
+    }
+
+    &:checked + .cart-checkbox > *:first-of-type {
+        display: none;
+    }
+
+    &:checked + .cart-checkbox > *:last-of-type {
+        display: flex;
+    }
+}

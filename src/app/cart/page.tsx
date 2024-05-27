@@ -106,7 +106,13 @@ function CartItem({ name, id, price, quantity, cartSelected, setCartSelected }: 
 
     return (
         <div className={styles.cartItem}>
-            <input type="checkbox" checked={cartSelected[id] ?? false} className={styles.cartItemSelected} onChange={onItemSelect} />
+            <label>
+                <input type="checkbox" checked={cartSelected[id] ?? false} className={styles.cartItemSelected} onChange={onItemSelect} />
+                <div className={styles.cartCheckbox}>
+                    <Icon name="circle" />
+                    <Icon name="check_circle" />
+                </div>
+            </label>
             <Link className={styles.cartItemImage} href={'#' + id}>
                 <Image
                     src={`/products/${name}.png`}
@@ -151,7 +157,13 @@ function CartGroup({ id, products, cartSelected, setCartSelected }: CartGroupPro
     return (
         <div className={styles.cartGroup}>
             <div className={styles.cartGroupSeller}>
-                <input type="checkbox" checked={products.every(({ id }) => cartSelected[id])} className={styles.cartGroupSelected} onChange={onGroupSelect} />
+                <label>
+                    <input type="checkbox" checked={products.every(({ id }) => cartSelected[id])} className={styles.cartGroupSelected} onChange={onGroupSelect} />
+                    <div className={styles.cartCheckbox}>
+                        <Icon name="circle" />
+                        <Icon name="check_circle" />
+                    </div>
+                </label>
                 <Icon name="storefront" />
                 {capitalize(getSeller(id))}
                 <div className={styles.cartGroupRemove} onClick={onRemove}>Remove</div>
@@ -221,6 +233,10 @@ export default function Cart() {
                 <div className={classNames(styles.cartGroup, styles.cartGroupAll)}>
                     <label className={styles.cartGroupAllSelected}>
                         <input type="checkbox" checked={Object.values(cartProducts).flat().every(({ id }) => cartSelected[id])} onChange={onSelect} />
+                        <div className={styles.cartCheckbox}>
+                            <Icon name="circle" />
+                            <Icon name="check_circle" />
+                        </div>
                         <span>Select All</span>
                     </label>
                     <div className={styles.cartEmpty} onClick={onClick}>Remove All</div>
