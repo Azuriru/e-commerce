@@ -46,7 +46,7 @@ export default function Navigation() {
                         >
                             <Icon name={icon} size={26} />
                             {
-                                name === 'cart' && items > 0 && <div className={styles.cartItems}>{items}</div>
+                                name === 'cart' && items > 0 && <div className={styles.cartItems}>{items > 99 ? '99+' : items}</div>
                             }
                             <span className={styles.navigationOptionText}>{capitalize(name)}</span>
                         </Link>

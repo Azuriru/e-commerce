@@ -217,13 +217,14 @@ export default function Cart() {
                     </Link>
                 </div>
             </div>
-
-            <div className={classNames(styles.cartGroup, styles.cartGroupAll)}>
-                <label className={styles.cartGroupAllSelected}>
-                    <input type="checkbox" checked={Object.values(cartProducts).flat().every(({ id }) => cartSelected[id])} onChange={onSelect} />
-                    <span>Select All</span>
-                </label>
-                <div className={styles.cartEmpty} onClick={onClick}>Remove All</div>
+            <div className={classNames(styles.cartGroupAllWrapper)}>
+                <div className={classNames(styles.cartGroup, styles.cartGroupAll)}>
+                    <label className={styles.cartGroupAllSelected}>
+                        <input type="checkbox" checked={Object.values(cartProducts).flat().every(({ id }) => cartSelected[id])} onChange={onSelect} />
+                        <span>Select All</span>
+                    </label>
+                    <div className={styles.cartEmpty} onClick={onClick}>Remove All</div>
+                </div>
             </div>
             <div className={styles.cartGroups}>
                 {
@@ -266,8 +267,8 @@ export default function Cart() {
             </div>
             <div className={styles.cartCheckoutHeader}>
                 <div className={styles.cartCheckoutHeaderWrapper}>
-
-                    <div className={styles.cartTotal}>Total: {cartTotal.toFixed(2)}</div>
+                    <div className={styles.cartTotal}>Total: ¥ {cartTotal.toFixed(2)}</div>
+                    <div className={styles.cartCheckout}>Checkout</div>
                 </div>
             </div>
         </div>

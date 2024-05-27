@@ -42,7 +42,7 @@
 }
 
 .cart-checkout-header-wrapper {
-    @include flex(between);
+    @include flex(centerY, between);
 }
 
 .cart-checkout-options {
@@ -50,20 +50,41 @@
     gap: v(2);
 }
 
+.cart-checkout {
+    border: 1px solid white;
+    padding: 10px 16px;
+}
+
 .cart-groups {
     @include flex(column);
-    gap: v(6);
-    padding: 0 v(6) v(6);
+    gap: v(2);
     overflow: auto;
     height: 100%;
+
+    @include breakpoint(md) {
+        gap: v(6);
+        padding: 0 v(6) v(6);
+    }
+}
+
+.cart-group-all-wrapper {
+    @include flex();
+    padding: 8px 0 8px;
+
+    @include breakpoint(md) {
+        padding: v(6);
+    }
 }
 
 .cart-group {
     @include flex(column);
     background: white;
-    border-radius: v(4);
     gap: v(4);
     padding: v(6);
+
+    @include breakpoint(md) {
+        border-radius: v(4);
+    }
 
     &.cart-group-empty {
         @include flex(center);
@@ -73,7 +94,6 @@
     &.cart-group-all {
         flex-direction: row;
         justify-content: space-between;
-        margin: 24px auto;
         padding: v(2) v(6);
 
         & .cart-group-all-selected {
@@ -117,8 +137,9 @@
 }
 
 .cart-item-details {
-    @include flex(column, between, grow);
-    padding: v(3);
+    @include flex(column, grow);
+    padding: v(3) 0 0 v(3);
+    gap: v(1);
 }
 
 .cart-item-name {
@@ -126,11 +147,13 @@
 }
 
 .cart-item-info {
-    @include flex(between, centerY);
+    @include flex(column, grow);
 }
 
 .cart-item-controls {
     @include flex;
+    margin-top: auto;
+    margin-left: auto;
 }
 
 .cart-item-controls > * {
@@ -142,4 +165,5 @@
     border-radius: 8px;
     box-shadow: 0px 1px 3px 1px #d3d3d3;
     background-color: #fff;
+    padding: 0 v(1);
 }

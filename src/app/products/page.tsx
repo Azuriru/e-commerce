@@ -113,7 +113,7 @@ export default function Home() {
                         >
                             <Icon name="shopping_cart" size={26} />
                             {
-                                items > 0 && <div className={styles.cartItems}>{items}</div>
+                                items > 0 && <div className={styles.cartItems}>{items > 99 ? '99+' : items}</div>
                             }
                         </Link>
                         <Link
