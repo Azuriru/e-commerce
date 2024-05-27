@@ -220,7 +220,7 @@ export default function Cart() {
             </div>
             <div className={styles.cartCheckoutHeader}>
                 <div className={styles.cartEmpty} onClick={onClick}>Clear All</div>
-                <div className={styles.cartTotal}>Total: {cartTotal}</div>
+                <div className={styles.cartTotal}>Total: {cartTotal.toFixed(2)}</div>
             </div>
         </div>
     );
