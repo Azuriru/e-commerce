@@ -60,12 +60,19 @@
 .product-list-options {
     @include flex;
     gap: v(2);
+
+    @include maxpoint(sm) {
+        overflow: auto;
+    }
 }
 
 .product-list-option-filter {
     @include flex;
     gap: v(2);
-    overflow: auto;
+
+    @include breakpoint(sm) {
+        overflow: auto;
+    }
 }
 
 .product-list-option {
