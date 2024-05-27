@@ -45,6 +45,8 @@
             flex: none;
         } @else if $prop == grow {
             flex-grow: 1;
+        } @else if $prop == shrink {
+            flex-shrink: 1;
         } @else if $prop == noShrink {
             flex-shrink: 0;
         }

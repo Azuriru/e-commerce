@@ -1,9 +1,9 @@
 .navigation {
     @include flex(hidden, evenly);
     background: white;
-    box-shadow: 0 0 6px #c3c3c3;
+    box-shadow: 0px 0px 12px 0 #c3c3c3;
     color: gray;
-
+    z-index: 2;
     @include maxpoint(lg) {
         display: flex;
     }

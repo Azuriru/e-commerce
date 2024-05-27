@@ -134,9 +134,12 @@
 }
 
 .cart-item-controls > * {
-    @include flex(center);
-    width: v(8);
-    height: v(8);
-    padding: v(1);
-    border: 1px solid black;
+    @include flex(center, shrink);
+    min-width: 32px;
+    max-width: 56px;
+    height: 32px;
+    margin: 3px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px 1px #d3d3d3;
+    background-color: #fff;
 }
