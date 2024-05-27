@@ -42,6 +42,7 @@
 .product-list {
     @include flex(wrap);
     // height: 100%;
+    background: #f3f3f3;
     overflow: auto;
     gap: v(6);
     padding: v(6);
@@ -91,12 +92,18 @@
     backdrop-filter: blur(20px);
     left: auto;
     z-index: 10;
-    width: 400px;
-    transform: translateX(400px);
-    transition: transform 0.5s;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+
+    @include breakpoint(md) {
+        width: 400px;
+    }
 
     &.shown {
-        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
     }
 }
 
